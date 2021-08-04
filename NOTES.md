@@ -11,7 +11,7 @@ npx create-react-app react-with-redux —template redux
   - Reducers
   - Store
 
-## Steps
+## Initial steps
 
 npx create-react-app react-redux-dipesh
 
@@ -26,6 +26,16 @@ npm install react-router-dom axios redux react-redux redux-thunk
 7. src/index.js
 8. creating the components and importing them in App.js
 
-...
+## Binding to redux
 
-?
+- src/containers/ProductComponent.js
+  - Link to the Details page
+- src/containers/ProductDetail.js
+  - Fetch the data
+  - Dispatch an action to save the data to the store
+    - ActionCreator
+    - Action
+    - Reducer
+    - RootReducer
+  - Read from the store with useSelector
+  - Clean up to avoid seeing the last loaded product on product change
