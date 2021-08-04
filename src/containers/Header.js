@@ -2,8 +2,10 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>
-      <h2>Fake Shop</h2>
+    <div className="ui menu">
+      <div className="ui container center">
+        <h2>FakeShop</h2>
+      </div>
     </div>
   )
 }
