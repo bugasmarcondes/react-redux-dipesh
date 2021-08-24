@@ -1,20 +1,14 @@
-import axios from 'axios'
-import React, {useEffect, useCallback} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
-import {setProducts} from 'redux/actions/productActions'
+import {fetchProducts} from 'redux/actions/productActions'
 import ProductComponent from './ProductComponent'
 
 function ProductListing() {
   const dispatch = useDispatch()
 
-  const fetchProducts = useCallback(async () => {
-    const response = await axios.get('https://fakestoreapi.com/products')
-    dispatch(setProducts(response.data))
-  }, [dispatch])
-
   useEffect(() => {
-    fetchProducts()
-  }, [fetchProducts])
+    dispatch(fetchProducts())
+  }, [dispatch])
 
   return (
     <div className="ui grid container">
