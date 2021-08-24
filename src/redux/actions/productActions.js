@@ -3,12 +3,20 @@ import {ActionTypes} from '../constants/actionTypes'
 
 export const fetchProducts = () => {
   return async function (dispatch, getState) {
-    const response = await fakeStoreApi.get('products')
+    const response = await fakeStoreApi.get(`products`)
     dispatch({
       type: ActionTypes.FETCH_PRODUCTS,
       payload: response.data,
     })
   }
+}
+
+export const fetchProduct = (id) => async (dispatch) => {
+  const response = await fakeStoreApi.get(`/products/${id}`)
+  dispatch({
+    type: ActionTypes.SELECTED_PRODUCT,
+    payload: response.data,
+  })
 }
 
 export const setProducts = products => {
